@@ -1,0 +1,48 @@
+[{
+  "name": "Cadillac",
+  "image": "Cadillac-logo.png"
+},
+{
+  "name": "Audi",
+  "image": "Audi-logo.png"
+},
+{
+  "name": "BMW",
+  "image": "BMW-logo.png"
+},
+{
+  "name": "Ford",
+  "image": "Ford-logo.png"
+},
+{
+  "name": "Honda",
+  "image": "Honda-logo.png"
+},
+{
+  "name": "Jeep",
+  "image": "Jeep-logo.png"
+},
+{
+  "name": "Lotus",
+  "image": "Lotus-logo.png"
+},
+{
+  "name": "Mercedes Benz",
+  "image": "MercedesBenz-logo.png"
+},
+{
+  "name": "Porsche",
+  "image": "Porsche-logo.png"
+},
+{
+  "name": "Subaru",
+  "image": "Subaru-logo.png"
+},
+{
+  "name": "Toyota",
+  "image": "Toyota-logo.png"
+},
+{
+  "name": "Volkswagen",
+  "image": "Volkswagen-logo.png"
+}]
