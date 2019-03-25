@@ -9,21 +9,21 @@ class App extends React.Component {
   
   state = {
     images,
-    clickedArray: [],
+    clickedList: [],
     topScore: 0,
     score: 0,
     message: "",
     shakeit: "false"
   };
-  clickImage = id => {
+  clickedImage = clickid => {
     const shuffledArray = this.shuffleArray(images);
     this.setState({images: shuffledArray});
-    if (this.state.clickedArray.includes(id)) {
-      this.setState({ score: 0, clickedArray: [], message: "You got greedy - now you have nothing", shakeit: "true"});
+    if (this.state.clickedList.includes(clickid)) {
+      this.setState({ score: 0, clickedList: [], message: "You got greedy - now you have nothing", shakeit: "true"});
     }
     else {
       this.setState({
-        clickedArray: this.state.clickedArray.concat([id]),
+        clickedList: this.state.clickedList.concat([clickid]),
         score: this.state.score + 1,
         message: "Nice choice",
         shakeit: "false"
@@ -52,19 +52,19 @@ class App extends React.Component {
           <p className = "score"><strong>Score: {this.state.score} | TopScore: {this.state.topScore}</strong></p>
           <p className="message"><strong>{this.state.message}</strong></p>
         </h3>
-        <Wrapper
-        shakeWrapper = {this.state.shakeit}
-        logo=
-          {this.state.images.map(logos => (
-            <ImageCard
-              clickImage={this.clickImage}
-              id={logos.id}
-              key={logos.id}
-              name={logos.name}
-              image={logos.image}
-            />
+        <Wrapper shakeWrapper = {this.state.shakeit}>
+            {this.state.images.map((logos, key) => (
+              <div key={key}>
+                <ImageCard
+                  clickImage={this.clickedImage}
+                  id={logos.id}
+                  key={logos.id}
+                  name={logos.name}
+                  image={logos.image}
+                />
+                </div>
           ))}
-        />
+        </Wrapper>
         <footer className="footer">
       <div className="container">
         <span className="text-muted">Car Clicky Game</span>
