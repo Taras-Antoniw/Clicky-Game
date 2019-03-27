@@ -15,23 +15,34 @@ class App extends React.Component {
     message: "",
     shakeit: "false"
   };
-  clickedImage = clickid => {
-    const shuffledArray = this.shuffleArray(images);
-    this.setState({images: shuffledArray});
+  clickedImage = (clickid) => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    //clickid.preventDefault();
+    //const shuffledArray = this.shuffleArray(images);
+    //this.setState({images: shuffledArray});
+    console.log(clickid);
     if (this.state.clickedList.includes(clickid)) {
-      this.setState({ score: 0, clickedList: [], message: "You got greedy - now you have nothing", shakeit: "true"});
-    }
+      this.setState({ 
+        clickedList: [], 
+        score: 0,
+        message: "You got greedy - now you have nothing", 
+        shakeit: "true"});
+      }
     else {
       this.setState({
         clickedList: this.state.clickedList.concat([clickid]),
         score: this.state.score + 1,
         message: "Nice choice",
-        shakeit: "false"
+        shakeit: "false",
       });
     }
+   
+
     if (this.state.score > this.state.topScore) {
       this.setState({ topScore: this.state.score });
     }
+    const shuffledArray = this.shuffleArray(images);
+    this.setState({images: shuffledArray});
   }
   shuffleArray = (imageArray) => {
     for (let i = imageArray.length - 1; i > 0; i--) {
