@@ -30,7 +30,7 @@ class App extends React.Component {
       }
     else {
       this.setState({
-        clickedList: this.state.clickedList.concat([clickid]),
+        clickedList: this.state.clickedList.concat(clickid),
         score: this.state.score + 1,
         message: "Nice choice",
         shakeit: "false",
@@ -67,11 +67,11 @@ class App extends React.Component {
             {this.state.images.map((logos, key) => (
               <div key={key}>
                 <ImageCard
-                  clickImage={this.clickedImage}
                   id={logos.id}
                   key={logos.id}
                   name={logos.name}
                   image={logos.image}
+                  clickImage={this.clickedImage}
                 />
                 </div>
           ))}
